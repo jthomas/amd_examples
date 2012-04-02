@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+            #jquery {
+                height: 250px;
+            }
+
+            #jquery > img {
+                height: 170px;
+                margin-bottom: 75px;
+            }
+
+            div {
+                margin: 40px 0;
+                text-align: center
+            }
+
+            .hidden { 
+                visibility: hidden;
+            }
+
+        </style>
+<script type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/dojo.js.uncompressed.js"
+  data-dojo-config="async: true, baseUrl: './', packages: [
+    { name: 'mootools', location: './mootools-core/Source', 
+      }
+    ]">
+</script>
+
+<script type="text/javascript">
+  require(["mootools/Core/Core"], function(mootools){
+    console.log(mootools);
+  });
+</script>
+</head>
+<body>
+    <div id="jquery">
+        <img src="jquery.png">
+    </div>
+    <div id="dojo">
+        <img src="dojo.png">
+    </div>
+</body>
+</html>

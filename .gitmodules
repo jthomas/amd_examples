@@ -1,0 +1,3 @@
+[submodule "dojo_and_mootools/mootools-core"]
+	path = dojo_and_mootools/mootools-core
+	url = git://github.com/arian/mootools-core.git
