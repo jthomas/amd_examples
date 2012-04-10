@@ -32,9 +32,9 @@
 
 <script type="text/javascript">
   define.amd.jQuery = true;
-  require(["jquery", "dojo/query", "dojo/NodeList-dom"], function(jquery, query){
+  require(["jquery", "dojo/query", "dojo/NodeList-dom", "dojo/domReady!"], function(jquery, query){
     jquery("#jquery").click(function () {
-        jquery("#jquery > img").toggle();
+        jquery("#jquery > img").toggleClass("hidden");
     });
     query("#dojo").on("click", function () {
         query("#dojo > img").toggleClass("hidden");

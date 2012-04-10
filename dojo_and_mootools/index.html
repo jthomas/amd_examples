@@ -3,11 +3,11 @@
     <head>
         <style>
 
-            #jquery {
+            #mootools {
                 height: 250px;
             }
 
-            #jquery > img {
+            #mootools > img {
                 height: 170px;
                 margin-bottom: 75px;
             }
@@ -25,20 +25,34 @@
 <script type="text/javascript"
   src="https://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/dojo.js.uncompressed.js"
   data-dojo-config="async: true, baseUrl: './', packages: [
-    { name: 'mootools', location: './mootools-core/Source', 
+    { name: 'mootools', location: './mootools-recent/amdified/', 
       }
     ]">
+
+</script>
+<script type="text/javascript">
+    require(["dojo/has", "dojo/query", "dojo/NodeList-dom", "dojo/domReady!"], function (has, query) {
+        // Make Dojo's "has" available as a global. Mootools relies on this.
+        window.has = has;
+        
+        query("#dojo").on("click", function () {
+            query("#dojo > img").toggleClass("hidden");
+        });
+
+        require(["mootools/Element/Element", "mootools/Element/Element.Event"], function(Element, Event){
+            Element.$("mootools").addEvent("click", function () {
+                Element.$$("#mootools > img").each(function (elem) {
+                    elem.toggleClass("hidden");
+                });
+            });
+        });
+    });
 </script>
 
-<script type="text/javascript">
-  require(["mootools/Core/Core"], function(mootools){
-    console.log(mootools);
-  });
-</script>
 </head>
 <body>
-    <div id="jquery">
-        <img src="jquery.png">
+    <div id="mootools">
+        <img src="mootools.png">
     </div>
     <div id="dojo">
         <img src="dojo.png">

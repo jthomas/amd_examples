@@ -1,4 +1,2 @@
-This doesn't work at the moment....
-
-Check out submodules in Git to pull down the latest version of Mootools set to
-the AMD branch.
+Mootools must be run through the AMD-conversion process to turn
+from CJS style to AMD.
